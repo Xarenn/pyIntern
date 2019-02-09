@@ -4,6 +4,7 @@
 Install virtualenv for example: <code>virtualenv -p /usr/bin/python2.7 venv/</code>
 
 Run http server in folder example, command: <code> python3 -m http.server </code>
+
 In script we have BASE_URL variable which is setup to localhost port 8000
 
 ## IMPORTANT
