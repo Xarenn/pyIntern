@@ -1,3 +1,3 @@
 # pyIntern
 
-WebCrawler and CSV REPORT PROCESSING TASKS
+WebCrawler and CSV REPORT PROCESSING tasks
