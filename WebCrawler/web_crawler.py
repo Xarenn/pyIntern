@@ -14,6 +14,7 @@ import requests
 links_data = []
 browser = mechanicalsoup.StatefulBrowser()
 bad_codes = [404, 409, 400, 403, 401, 501, 500]
+BASE_URL = "http://localhost:8000"
 
 
 class DataSite:
@@ -148,7 +149,7 @@ def site_map(url):
 """ Execution """
 
 try:
-    site_map("http://0.0.0.0:8000")
+    site_map(BASE_URL)
     print(json.dumps(links_data))
 
 except KeyboardInterrupt:

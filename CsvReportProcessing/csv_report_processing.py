@@ -335,4 +335,4 @@ def create_ad_model_view(file_name, encoding="UTF-8"):
 
 """ EXECUTION
 """
-create_ad_model_view("data-utf8.csv", 'UTF-8')
+create_ad_model_view("data-utf16.csv", 'UTF-16')
