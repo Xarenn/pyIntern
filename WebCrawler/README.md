@@ -5,7 +5,7 @@ Install virtualenv for example: <code>virtualenv -p /usr/bin/python2.7 venv/</co
 
 Run http server in folder example, command: <code> python3 -m http.server </code>
 
-In script we have BASE_URL variable which is setup to localhost port 8000
+In script we have BASE_URL variable which is setup to localhost port 8000 we can change it for any other address
 
 ## IMPORTANT
 If we want to crawl websites not related to start website we must change line:
