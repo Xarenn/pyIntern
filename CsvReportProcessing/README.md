@@ -2,6 +2,10 @@
 
 ## CsvReportProcessing
 
+if you don't have virtualenv so use <code>pip install -r requirements.txt</code> for installing it globally
+
+Create virtualenv: <code>python3 -m virtualenv venv</code>
+
 Install virtualenv for example: <code>virtualenv -p /usr/bin/python3.7 venv/</code>
 
 Prepare CSV file with encoding UTF-8 or UTF-16 which this require one change in code.
