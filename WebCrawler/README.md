@@ -18,3 +18,6 @@ If we want to crawl websites not related to start website we must change line:
 to this line:
 
 139 <code>not_crawled = check_urls(tmp_links, keys)</code>
+
+## Output
+While script is working we can end the program CTRL+Z or CTRL+C and we should see data on the standard output
