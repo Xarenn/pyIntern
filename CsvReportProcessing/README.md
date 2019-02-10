@@ -12,7 +12,11 @@ Install virtualenv for example: <code>virtualenv -p /usr/bin/python3.7 venv/</co
 
 Prepare CSV file with encoding UTF-8 or UTF-16 which should have with columns: (DD-MM-YYYY), three letter country code, number of impressions, number of clicks
 
-Execution line: <code> create_ad_model_view("data-utf8.csv") </code>
+## Encoding
+
+We want to use utf-8 and utf-16 so it requires change one thing in code.
+
+Execution line: <code> create_ad_model_view("data-utf8.csv", "UTF-8") </code>
 
 Second parameter is "UTF-8" as default but if we want to read file with encoding UTF-16 we should add parameter "UTF-16"
 
