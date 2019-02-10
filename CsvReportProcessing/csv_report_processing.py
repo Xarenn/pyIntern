@@ -1,8 +1,8 @@
+import sys
 from datetime import datetime
 import csv
 import pycountry
 from itertools import groupby
-
 
 class DataModel:
     """
@@ -101,7 +101,7 @@ class DataModel:
 
             return ad
         except KeyError as exc:
-            print("Cannot find ad attribute "+str(exc))
+            print("Cannot find ad attribute "+str(exc), file=sys.stderr)
             return None
 
     @staticmethod
@@ -112,10 +112,13 @@ class DataModel:
         :param ad_models: list of ad_models
         :return: generator which contains date and group of ads
         """
+        try:
+            ad_models.sort(key=lambda x: x.date)
+            for date_time, group in groupby(ad_models, lambda x: x.date):
+                yield date_time, group
+        except TypeError as exc:
+            print("Invalid date " + str(exc), file=sys.stderr)
 
-        ad_models.sort(key=lambda x: x.date)
-        for date_time, group in groupby(ad_models, lambda x: x.date):
-            yield date_time, group
 
     @staticmethod
     def get_values_from_dict(ad_dict):
@@ -131,7 +134,7 @@ class DataModel:
             ads = list(ad_dict.values())[0]
             return ads
         except IndexError as exc:
-            print("Cannot find value " + str(exc))
+            print("Cannot find value " + str(exc), file=sys.stderr)
             return None
 
     @staticmethod
@@ -151,7 +154,7 @@ class DataModel:
 
             return value
         except IndexError as exc:
-            print("Cannot find value " + str(exc))
+            print("Cannot find value " + str(exc), file=sys.stderr)
             return None
 
     @staticmethod
@@ -168,7 +171,7 @@ class DataModel:
 
             return key
         except IndexError as exc:
-            print("Cannot find key " + str(exc))
+            print("Cannot find key " + str(exc), file=sys.stderr)
             return None
 
     @staticmethod
@@ -251,7 +254,7 @@ class AdModel:
             ctr = float(ctr[:len(ctr) - 1])
             return ctr
         except IndexError as exc:
-            print("CTR parsing failed" + str(exc))
+            print("CTR parsing failed" + str(exc), file=sys.stderr)
             return 0.0
 
     @staticmethod
@@ -266,8 +269,11 @@ class AdModel:
 
         if type(date) == datetime:
             return date
-
-        date_object = datetime.strptime(date.replace(" ", ""), "%m/%d/%Y")
+        try:
+            date_object = datetime.strptime(date.replace(" ", ""), "%m/%d/%Y")
+        except (TypeError, ValueError) as exc:
+            print("Cannot format time " + str(exc), file=sys.stderr)
+            return None
         return date_object
 
 
@@ -285,7 +291,7 @@ def create_ads(file_name, data_reader) -> list:
         try:
                 ads.append(AdModel(row[0], row[1], row[2], row[3]))
         except IndexError:
-            print("Invalid row in file: " + file_name + "invalid row: ", row)
+            print("Invalid row in file: " + file_name + "invalid row: ", row, file=sys.stderr)
 
     return ads
 
@@ -320,7 +326,7 @@ def create_ad_model_view(file_name, encoding="UTF-8"):
             data_reader = csv.reader(data_file, delimiter=',')
             ads = create_ads(file_name, data_reader)
     except (UnicodeDecodeError, FileNotFoundError, UnicodeError) as exc:
-        print("Cannot read file: " + str(exc))
+        print("Cannot read file: " + str(exc), file=sys.stderr)
 
     data_model = DataModel(ads)
 
