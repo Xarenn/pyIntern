@@ -1,5 +1,8 @@
 # pyIntern Python2.7
 ## WebCrawler
+if you don't have virtualenv so use pip install -r requirements.txt for installing it globally
+
+Create virtualenv: <code>python -m virtualenv venv</code>
 
 Install virtualenv for example: <code>virtualenv -p /usr/bin/python2.7 venv/</code>
 
