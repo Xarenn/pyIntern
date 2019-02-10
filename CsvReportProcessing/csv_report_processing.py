@@ -301,7 +301,7 @@ def write_output_file(ad_models):
     with open('output-data-utf8.csv', 'w', newline='', encoding='UTF-8') as output_file:
         csv_writer = csv.writer(output_file, delimiter=',')
         for ad in ad_models:
-            csv_writer.writerow((ad.date.strftime('%m/%d/%Y'), ad.country_code, ad.impression, ad.clicks))
+            csv_writer.writerow((ad.date.strftime('%Y/%m/%d'), ad.country_code, ad.impression, ad.clicks))
 
 
 def create_ad_model_view(file_name, encoding="UTF-8"):
