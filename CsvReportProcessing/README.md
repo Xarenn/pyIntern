@@ -10,7 +10,9 @@ Install virtualenv for example: <code>virtualenv -p /usr/bin/python3.7 venv/</co
 
 ## CSV FILE
 
-Prepare CSV file with encoding UTF-8 or UTF-16 which should have with columns: (DD-MM-YYYY), three letter country code, number of impressions, number of clicks
+Prepare CSV file with encoding UTF-8 or UTF-16 which should have with columns: date (MM/DD/YYYY), state name, number of impressions and CTR percentage.
+
+Output file is saved in encoding UTF-8 with these columns: date (YYYY-MM-DD), three letter country code, number of impressions, number of clicks 
 
 ## Encoding
 
