@@ -10,6 +10,10 @@ Run http server in folder example, command: <code> python3 -m http.server </code
 
 In script we have BASE_URL variable which is setup to localhost port 8000 we can change it for any other address
 
+## How to run it?
+
+Use: <code>python web_crawler.py</code>
+
 ## IMPORTANT
 If we want to crawl websites not related to start website we must change line:
 
