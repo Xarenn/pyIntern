@@ -16,7 +16,7 @@ Output file is saved in encoding UTF-8 with these columns: date (YYYY-MM-DD), th
 
 ## Encoding
 
-We want to use utf-8 and utf-16 so it requires change one thing in code.
+We want to use utf-8 or utf-16 so it requires one change in code.
 
 Execution line: <code> create_ad_model_view("data-utf8.csv", "UTF-8") </code>
 
