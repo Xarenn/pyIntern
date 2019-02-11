@@ -6,7 +6,15 @@ if you don't have virtualenv so use <code>pip install -r requirements.txt</code>
 
 Create virtualenv: <code>python3 -m virtualenv venv</code>
 
-Install virtualenv for example: <code>virtualenv -p /usr/bin/python3.7 venv/</code>
+Install virtualenv for example: <code>virtualenv -p /usr/bin/python3.7 venv/</code> (not necessary)
+
+and source it use: <code>source venv/bin/activate</code> after that use <code>pip install -r requirements.txt</code>
+
+for windows fast usage: <code> venv/bin/pyhon3.7 -m pip install -r requirements.txt</code>
+
+and run: <code>python csv_report_processing.py<code>
+
+for windows: <code>venv/bin/pyhon3.7 csv_report_processing.py</code>
 
 ## CSV FILE
 
