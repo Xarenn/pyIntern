@@ -19,7 +19,7 @@ BASE_URL = "http://localhost:8000"
 
 class DataSite:
     """
-        DataSite class it's a simple structure to storing information about website and serialize it
+        DataSite class it's a simple structure to storing information about website and to serialize it
     """
 
     def __init__(self, title, links):
