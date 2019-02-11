@@ -12,9 +12,11 @@ and source it use: <code>source venv/bin/activate</code> after that use <code>pi
 
 for windows fast usage: <code> venv/bin/pyhon3.7 -m pip install -r requirements.txt</code>
 
-and run: <code>python csv_report_processing.py</code>
+## How to run it?
+After sourced virtualenv: <code>python csv_report_processing.py</code>
 
 for windows: <code>venv/bin/pyhon3.7 csv_report_processing.py</code>
+
 ## CSV FILE
 
 Prepare CSV file with encoding UTF-8 or UTF-16 which should have with columns: date (MM/DD/YYYY), state name, number of impressions and CTR percentage.
